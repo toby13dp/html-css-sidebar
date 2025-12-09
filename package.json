@@ -1,20 +1,16 @@
 {
-    "title": "Name of the extension",
-    "name": "github-<owner>-<repo>",
-    "description": "A sample extension.",
-    "version": "0.0.1",
-    "license": "MIT",
-    "author": "your name (https://github.com/<your github id>)",
-    "homepage": "<project web page url or this github repo url if no website available>",
-    "engines": {
-        "brackets": ">=2.0.0"
-    },
-    "categories": "demo",
-    "keywords": [
-        "phcode", "extension", "demo"
-    ],
-    "files": [
-        "main.js"
-    ]
+  "name": "html-css-sidebar",
+  "title": "HTML-CSS Sidebar",
+  "description": "Toont en bewerkt CSS-regels voor de huidige HTML-tag, class of id in een rechterzijbalk.",
+  "version": "0.1.0",
+  "author": "Toby",
+  "license": "MIT",
+  "engines": {
+    "phoenix": ">=1.0.0"
+  },
+  "main": "main.js",
+  "categories": [
+    "editing",
+    "css"
+  ]
 }
-

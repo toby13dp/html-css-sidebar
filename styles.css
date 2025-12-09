@@ -1,0 +1,226 @@
+/* styles.css – HTML–CSS Sidebar met filter, groepering en diff-highlight */
+
+#html-css-sidebar-panel.html-css-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 340px;
+    min-width: 260px;
+
+    background: #1f1f1f;
+    border-left: 1px solid #444;
+
+    display: none;
+    z-index: 20;
+    box-sizing: border-box;
+}
+
+.html-css-sidebar-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.html-css-sidebar-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 6px 10px;
+    border-bottom: 1px solid #333;
+    background: #252525;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.html-css-sidebar-title {
+    font-weight: 600;
+}
+
+.html-css-sidebar-close {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1;
+    padding: 0 4px;
+    cursor: pointer;
+}
+
+.html-css-sidebar-close:hover {
+    color: #fff;
+}
+
+.html-css-sidebar-body {
+    flex: 1 1 auto;
+    overflow: auto;
+    padding: 8px;
+    font-size: 12px;
+}
+
+.html-css-sidebar-empty {
+    color: #999;
+    font-style: italic;
+    padding: 4px 2px;
+}
+
+/* filterbalk */
+
+.html-css-sidebar-filterbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 11px;
+}
+
+.html-css-sidebar-filterlabel {
+    white-space: nowrap;
+}
+
+.html-css-sidebar-filterbar select {
+    flex: 1 1 auto;
+    min-width: 0;
+    background: #262626;
+    border: 1px solid #444;
+    color: #eee;
+    padding: 2px 4px;
+    font-size: 11px;
+}
+
+.html-css-sidebar-count {
+    flex: 0 0 auto;
+    color: #aaa;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+/* groepering per file */
+
+.html-css-sidebar-groups {
+    display: block;
+}
+
+.html-css-sidebar-group {
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    background: #202020;
+}
+
+.html-css-sidebar-group-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 6px;
+    font-size: 11px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid #333;
+    background: #262626;
+}
+
+.html-css-sidebar-group-header:hover {
+    background: #2d2d2d;
+}
+
+.html-css-sidebar-group-header::before {
+    content: "▾";
+    font-size: 9px;
+    margin-right: 4px;
+    opacity: 0.9;
+}
+
+.html-css-sidebar-group.collapsed .html-css-sidebar-group-header::before {
+    transform: rotate(-90deg);
+}
+
+.html-css-sidebar-group-title {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.html-css-sidebar-group-badge {
+    flex: 0 0 auto;
+    margin-left: 6px;
+    font-size: 10px;
+    color: #ccc;
+}
+
+.html-css-sidebar-group-body {
+    padding: 4px;
+}
+
+.html-css-sidebar-group.collapsed .html-css-sidebar-group-body {
+    display: none;
+}
+
+/* individuele regels */
+
+.html-css-sidebar-item {
+    margin-bottom: 6px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    background: #1b1b1b;
+}
+
+.html-css-sidebar-meta {
+    padding: 4px 6px;
+    font-size: 11px;
+    color: #aaa;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+.html-css-sidebar-meta:hover {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+.html-css-sidebar-textarea {
+    width: 100%;
+    min-height: 60px;
+    max-height: 220px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    padding: 6px;
+    font-family: monospace;
+    font-size: 12px;
+    background: #101010;
+    color: #eee;
+    box-sizing: border-box;
+}
+
+/* diff-achtige highlight: gewijzigd / opgeslagen */
+
+.html-css-sidebar-item-changed {
+    border-color: #e0a800;
+    box-shadow: 0 0 0 1px rgba(224, 168, 0, 0.5);
+}
+
+.html-css-sidebar-item-changed .html-css-sidebar-meta::after {
+    content: " • gewijzigd";
+    color: #e0a800;
+    margin-left: 4px;
+    font-size: 10px;
+}
+
+.html-css-sidebar-item-saved {
+    border-color: #28a745;
+    box-shadow: 0 0 0 1px rgba(40, 167, 69, 0.7);
+}
+
+/* optioneel: resizer-indicatie aan de linkerkant van de sidebar */
+
+.horz-resizable.left-resizer {
+    /* extra styling voor de resizer kan hier indien gewenst */
+}
